@@ -13,17 +13,36 @@ header {
     text-align: center;
 }
 
+
+/* Create the typing effect */
 h1 {
-    margin: 0;
+    font-family: 'Courier New', Courier, monospace;  /* Monospace font for better typing effect */
+    display: inline-block;
+    border-right: 3px solid black;  /* Create a blinking cursor effect */
+    padding-right: 5px;
+    white-space: nowrap;  /* Prevent text from wrapping */
+    overflow: hidden;  /* Hide the extra text initially */
+    width: 0;  /* Start with width 0 to hide the text */
+    animation: typing 4s steps(11) 1s forwards, blink 0.75s step-end infinite; /* Typing and cursor blinking effects */
 }
 
-section {
-    padding: 20px;
-    margin: 20px;
-    background: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Define the typing animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;  /* Full width of the text */
+    }
 }
+
+/* Define the blinking cursor effect */
+@keyframes blink {
+    50% {
+        border-color: transparent;  /* Make the cursor disappear at the middle of each blink cycle */
+    }
+}
+
 
 h2 {
     color: #35424a;
